@@ -13,7 +13,7 @@ function moveFile() {
   }
 
   if (!fs.existsSync(sourcePath) || !fs.statSync(sourcePath).isFile()) {
-    console.error(`The file isn't or the file is as a directory`);
+    console.error('Source file does not exist or is not a file.');
 
     return;
   }
