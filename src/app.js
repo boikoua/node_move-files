@@ -39,6 +39,10 @@ function moveFile() {
   }
 
   try {
+    if (path.resolve(sourcePath) === path.resolve(destination)) {
+      return;
+    }
+
     fs.renameSync(sourcePath, destination);
   } catch (err) {
     console.error(`Error moving file: ${err.message}`);
